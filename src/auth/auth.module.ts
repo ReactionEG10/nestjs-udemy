@@ -6,6 +6,7 @@ import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
+import { UserController } from './users.controller';
 
 @Module({
     imports:[TypeOrmModule.forFeature([User]),
@@ -18,6 +19,6 @@ JwtModule.registerAsync({
     })
 })],
     providers:[LocalStrategy,JwtStrategy, AuthService],
-    controllers: [AuthController]
+    controllers: [AuthController,UserController]
 })
 export class AuthModule {}
