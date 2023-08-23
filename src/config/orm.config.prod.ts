@@ -1,4 +1,4 @@
-import { Event } from "src/events/event.entity";
+import { Event } from "./../events/event.entity";
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import {registerAs} from '@nestjs/config'
 

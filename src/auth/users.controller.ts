@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Post } from "@nestjs/common";
+import { BadRequestException, Body, Controller, Post, SerializeOptions } from '@nestjs/common';
 import { AuthService } from "./auth.service";
 import { CreateUserDto } from "./input/create.user.dto";
 import { User } from "./user.entity";
@@ -6,6 +6,7 @@ import { Repository } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 
 @Controller('users')
+@SerializeOptions({strategy:'excludeAll'})
 export class UserController{
     constructor(
         private readonly authService:AuthService,
